@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aqvyn — pure mountain water</title>
+
+  <!-- Google Fonts: Inter -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="smooth-wrapper">
+
+  <!-- ================== HEADER ================== -->
+  <header style="--border-width:0;">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <div class="logo">aqvyn</div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="#">Home</a>
+        <a href="#">Our water</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <!-- Hamburger Icon for Mobile -->
+      <div class="hamburger" onclick="toggleMobileNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileMenu">
+      <a href="#">Home</a>
+      <a href="#">Our water</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Contact</a>
+    </div>
+  </header>
+
+  <!-- ================== MAIN CONTENT ================== -->
+  <main id="smooth-content">
+
+    <!-- Hero Bottle Overlay Wrapper -->
+    <div class="hero-bottle-wrapper">
+      <img src="./image.png" alt="aqvyn water bottle"
+        class="hero-bottle" />
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero vintage-hero">
+      <div class="hero-content">
+        <!-- Main Heading -->
+        <h1>
+          <span class="line">pure</span>
+          <span class="line highlight">aqvyn</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section-intro">
+      <div class="intro-grid">
+
+        <!-- Left Side: Headings and Description -->
+        <div class="intro-left">
+          <p class="small-title">still · sparkling · glass</p>
+          <h2 class="main-heading">Water worth slowing down for</h2>
+          <p class="description">
+            aqvyn is alpine spring water, lightly mineralized for a clean,
+            crisp taste. Filtered by rock and time—nothing added but bottle
+            and cap.
+          </p>
+          <a href="#" class="cta-box">Find aqvyn</a>
+        </div>
+
+        <!-- Right Side: Ingredients List -->
+        <div class="intro-right">
+          <div class="ingredients-log">
+            <h3 class="ingredients-title">What’s inside</h3>
+
+            <div class="ingredient-item">
+              <div class="ingredient-qty">pH</div>
+              <div class="ingredient-text">
+                <strong>7.2–7.8 natural balance</strong>
+                <p>Smooth on the palate—no sour edge, no harsh bite.</p>
+              </div>
+            </div>
+
+            <div class="ingredient-item">
+              <div class="ingredient-qty">TDS</div>
+              <div class="ingredient-text">
+                <strong>Low mineral profile</strong>
+                <p>Just enough electrolytes from the source—not engineered.</p>
+              </div>
+            </div>
+
+            <div class="ingredient-item">
+              <div class="ingredient-qty">SiO₂</div>
+              <div class="ingredient-text">
+                <strong>Natural silica</strong>
+                <p>From deep aquifers—part of that soft, rounded mouthfeel.</p>
+              </div>
+            </div>
+
+            <div class="ingredient-item">
+              <div class="ingredient-qty">0</div>
+              <div class="ingredient-text">
+                <strong>Sugar · calories · fuss</strong>
+                <p>Unsweetened. Unflavored. Water that tastes like water.</p>
+              </div>
+            </div>
+
+            <div class="ingredient-item">
+              <div class="ingredient-qty">∞</div>
+              <div class="ingredient-text">
+                <strong>Recyclable packaging</strong>
+                <p>Bottle-to-bottle programs where we can—less plastic drift.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+      <h2 class="timeline-main-title">Our story</h2>
+
+      <!-- First Timeline Entry -->
+      <div class="timeline-entry">
+        <!-- Left Column: Date + Image -->
+        <div class="timeline-left">
+          <div class="timeline-date">2016</div>
+          <img src="./first%20batch.png" alt="aqvyn spring source"
+            class="timeline-img" />
+        </div>
+
+        <!-- Right Column: Story -->
+        <div class="timeline-right">
+          <h3 class="timeline-title">The first capture</h3>
+          <p class="timeline-description">
+            We tapped a single high-altitude spring—cold, constant, and clear.
+            The first aqvyn bottles were filled by hand on the valley floor,
+            labels still damp from the press.
+          </p>
+        </div>
+      </div>
+
+      <!-- Second Timeline Entry -->
+      <div class="timeline-entry">
+        <div class="timeline-left">
+          <div class="timeline-date">2022</div>
+          <img src="./first%20batch.png" alt="aqvyn watershed protection"
+            class="timeline-img" />
+        </div>
+
+        <div class="timeline-right">
+          <h3 class="timeline-title">Watershed promise</h3>
+          <p class="timeline-description">
+            We locked in long-term protection for the catchment—no shortcuts,
+            no bulk extraction. Every sip funds monitoring, habitat repair, and
+            keeping the source as quiet as the day we found it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Sidebar (Fixed vertical navigation) -->
+    <aside class="social-sidebar" style="--border-height:0;">
+      <nav>
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5Zm.5 1.5h7.5a4.25 4.25 0 0 1 4.25 4.25v7.5a4.25 4.25 0 0 1-4.25 4.25h-7.5a4.25 4.25 0 0 1-4.25-4.25v-7.5a4.25 4.25 0 0 1 4.25-4.25Zm8.5 2.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm-5.25 1.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" />
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14Zm-3.75 7.25h-.08a2.11 2.11 0 0 0-1.92 1.18V10.5h-2.5v6.75h2.5v-3.43c0-.87.65-1.57 1.45-1.57s1.3.7 1.3 1.57v3.43H18.5v-3.87c0-1.88-1.16-2.81-2.25-2.81ZM7.5 10.5H10V17.25H7.5V10.5Zm1.25-3a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z" />
+          </svg>
+        </a>
+
+        <!-- Twitter -->
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M21 5.92a8.18 8.18 0 0 1-2.36.65 4.12 4.12 0 0 0 1.8-2.27 8.21 8.21 0 0 1-2.6.99 4.1 4.1 0 0 0-7 3.73 11.65 11.65 0 0 1-8.46-4.3 4.1 4.1 0 0 0 1.27 5.48 4.07 4.07 0 0 1-1.86-.52v.05a4.1 4.1 0 0 0 3.29 4.02 4.07 4.07 0 0 1-1.85.07 4.1 4.1 0 0 0 3.83 2.85A8.24 8.24 0 0 1 2 19.53a11.62 11.62 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68v-.53a8.36 8.36 0 0 0 2.06-2.13Z" />
+          </svg>
+        </a>
+      </nav>
+    </aside>
+  </main>
+
+  <!-- ================== FOOTER ================== -->
+  <footer>
+    <div class="footer-inner">
+      <!-- Logo -->
+      <div class="footer-logo">aqvyn</div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Stockists</a>
+        <a href="#">Privacy</a>
+      </div>
+
+      <!-- Contact and Social Links -->
+      <div class="footer-contact">
+        <a href="#">hello@aqvyn.com</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP first so hero is not stuck at opacity:0 if a later script fails or is slow -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
