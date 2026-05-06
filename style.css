@@ -7,14 +7,25 @@
   font-display: swap;
 }
 
-/* === CSS Variables: aqvyn palette (cool water tones) === */
+/* === Theme: black · gold · white === */
 :root {
-  --sienna: #0c5f7a;
-  --sienna-2: #084056;
+  --gold: #d4af37;
+  --gold-bright: #f0dc82;
+  --gold-dark: #9a7b1c;
+  --gold-dim: #6b5815;
   --white: #ffffff;
-  --black: #0f1720;
-  --tan: #8ec5d6;
-  --papaya-whip: #e6f2f6;
+  --text-primary: #f0f0f0;
+  --text-muted: #a3a3a3;
+  --surface: #0a0a0a;
+  --surface-raised: #141414;
+  --line-gold: rgba(212, 175, 55, 0.42);
+
+  /* Legacy names (used across HTML/CSS/JS) */
+  --sienna: var(--gold);
+  --sienna-2: var(--gold-dark);
+  --tan: var(--line-gold);
+  --papaya-whip: var(--surface);
+  --black: var(--text-primary);
 }
 
 /* === Global Reset === */
@@ -28,8 +39,8 @@
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-color: var(--papaya-whip);
-  color: var(--black);
+  background-color: var(--surface);
+  color: var(--text-primary);
 }
 
 /* === Header Bar === */
@@ -37,8 +48,9 @@ header {
   position: sticky; /* sticks to top on scroll */
   top: 0;
   z-index: 999;
-  background-color: var(--papaya-whip);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background-color: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 var(--line-gold), 0 8px 32px rgba(0, 0, 0, 0.45);
 }
 
 /* Bottom border animation (controlled via JS) */
@@ -62,6 +74,12 @@ header::after {
   justify-content: space-between;
 }
 
+/* Logo link (wraps .logo) */
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Logo Text */
 .logo {
   font-family: "Veneer", serif;
@@ -70,6 +88,13 @@ header::after {
   color: var(--sienna);
   letter-spacing: 2px;
   text-transform: lowercase;
+}
+
+.desktop-nav a[aria-current="page"] {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 4px;
 }
 
 /* Desktop Nav Menu */
@@ -88,7 +113,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--black);
+  color: var(--gold-bright);
 }
 
 /* Hamburger Icon (hidden by default) */
@@ -102,14 +127,14 @@ nav a:hover {
 .hamburger div {
   width: 26px;
   height: 3px;
-  background: var(--black);
+  background: var(--white);
 }
 
 /* Mobile Nav Menu */
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background: var(--sienna);
+  background: var(--surface-raised);
   padding: 1rem 2rem;
   border-top: 1px solid var(--tan);
 }
@@ -117,12 +142,12 @@ nav a:hover {
 .mobile-nav a {
   padding: 0.75rem 0;
   font-size: 1rem;
-  color: var(--papaya-whip);
+  color: var(--text-primary);
   text-decoration: none;
 }
 
 .mobile-nav a:hover {
-  color: var(--white);
+  color: var(--gold-bright);
 }
 
 /* === Main Content Wrapper === */
@@ -141,7 +166,7 @@ main {
   margin: 0 auto;
   padding: 2rem;
   height: 100%;
-  background-color: var(--papaya-whip);
+  background-color: var(--surface);
 }
 
 /* Sidebar right border animation */
@@ -170,16 +195,16 @@ main {
   justify-content: center;
   width: 38px;
   height: 38px;
-  border: 1px solid var(--sienna);
+  border: 1px solid var(--gold);
   border-radius: 50%;
-  background-color: var(--papaya-whip);
-  color: var(--sienna);
+  background-color: var(--surface);
+  color: var(--gold);
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .social-sidebar a:hover {
-  background-color: var(--sienna);
-  color: var(--papaya-whip);
+  background-color: var(--gold);
+  color: var(--surface);
 }
 
 .social-sidebar svg {
@@ -218,10 +243,11 @@ main {
 
 /* === Footer Section === */
 footer {
-  background: var(--sienna-2);
+  background: #050505;
   color: var(--white);
   padding: 3rem 2rem;
   min-height: 50vh;
+  border-top: 1px solid var(--line-gold);
 }
 
 .footer-inner {
@@ -240,6 +266,7 @@ footer {
   font-weight: normal;
   letter-spacing: 2px;
   text-transform: lowercase;
+  color: var(--gold);
 }
 
 /* Link and Contact Groups */
@@ -252,14 +279,14 @@ footer {
 
 .footer-links a,
 .footer-contact a {
-  color: var(--papaya-whip);
+  color: var(--text-muted);
   font-size: 0.95rem;
   text-decoration: none;
 }
 
 .footer-links a:hover,
 .footer-contact a:hover {
-  color: var(--tan);
+  color: var(--gold-bright);
 }
 
 /* === Responsive Header Behavior === */
@@ -300,7 +327,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--papaya-whip);
+  background-color: var(--surface);
   background-size: cover;
   padding: 2rem;
   text-align: center;
@@ -357,7 +384,8 @@ footer {
   width: auto;
   height: 100%;
   margin: 0 auto;
-  filter: drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(8px 12px 24px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 40px rgba(212, 175, 55, 0.12));
   transform: rotate(20deg);
   transition: filter 0.3s ease;
 }
@@ -379,7 +407,7 @@ footer {
 
 /* === Intro Section (below hero) === */
 .section-intro {
-  background-color: var(--papaya-whip);
+  background-color: var(--surface);
   border-top: 1px solid var(--tan);
   padding: 1rem 2rem;
   position: relative;
@@ -407,7 +435,7 @@ footer {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--sienna-2);
+  color: var(--gold);
   margin-bottom: 1rem;
 }
 
@@ -424,7 +452,7 @@ footer {
 /* Intro Paragraph Description */
 .description {
   font-size: 1.05rem;
-  color: var(--black);
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -433,17 +461,17 @@ footer {
 .cta-box {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 2px solid var(--sienna);
-  background-color: var(--sienna);
-  color: var(--papaya-whip);
+  border: 2px solid var(--gold);
+  background-color: var(--gold);
+  color: #0a0a0a;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .cta-box:hover {
-  background-color: var(--papaya-whip);
-  color: var(--sienna);
+  background-color: transparent;
+  color: var(--gold-bright);
 }
 
 /* === Responsive Intro Section === */
@@ -497,7 +525,7 @@ footer {
 .ingredient-qty {
   font-family: "Veneer", serif;
   font-size: 2.5rem;
-  color: var(--sienna-2);
+  color: var(--gold-dark);
   min-width: 90px;
   text-align: left;
   line-height: 1;
@@ -519,7 +547,7 @@ footer {
 .ingredient-text p {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--black);
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -616,10 +644,10 @@ footer {
 .timeline-img {
   width: 100%;
   max-width: 240px;
-  border: 3px solid var(--sienna-2);
+  border: 2px solid var(--gold);
   padding: 0.5rem;
-  background-color: var(--papaya-whip);
-  box-shadow: 4px 4px 0 var(--sienna);
+  background-color: var(--surface-raised);
+  box-shadow: 4px 4px 0 rgba(212, 175, 55, 0.35);
 }
 
 /* Right Side of Timeline: Text Content */
@@ -631,13 +659,13 @@ footer {
 .timeline-title {
   font-family: "Veneer", serif;
   font-size: 2rem;
-  color: var(--sienna-2);
+  color: var(--gold-bright);
   margin-bottom: 1rem;
 }
 
 .timeline-description {
   font-size: 1.05rem;
-  color: var(--black);
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -675,5 +703,211 @@ footer {
 
   .timeline-entry:nth-child(odd) .timeline-right {
     order: 2;
+  }
+}
+
+/* === Shop page === */
+.shop-main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  padding-left: 103px;
+  position: relative;
+}
+
+.shop-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+  width: 100%;
+}
+
+.shop-hero {
+  border-bottom: 1px solid var(--tan);
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.shop-title {
+  font-family: "Veneer", serif;
+  font-weight: 100;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: var(--sienna);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+}
+
+.shop-lead {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 36rem;
+}
+
+.shop-3d-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--tan);
+}
+
+.shop-3d-header {
+  margin-bottom: 1rem;
+}
+
+.shop-3d-title {
+  font-family: "Veneer", serif;
+  font-size: 1.75rem;
+  font-weight: normal;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.shop-3d-hint {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  opacity: 0.95;
+}
+
+.shop-3d-viewer {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line-gold);
+  background-color: #0e0e0e;
+  background-image: linear-gradient(
+      45deg,
+      rgba(212, 175, 55, 0.06) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, rgba(212, 175, 55, 0.06) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(212, 175, 55, 0.06) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(212, 175, 55, 0.06) 75%);
+  background-size: 14px 14px;
+  background-position: 0 0, 0 7px, 7px -7px, -7px 0;
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.15),
+    0 12px 48px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  touch-action: none;
+}
+
+.shop-3d-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.shop-3d--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  touch-action: auto;
+}
+
+.shop-3d-fallback-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(8px 12px 16px rgba(0, 0, 0, 0.15));
+}
+
+.shop-grid-section {
+  padding-bottom: 2rem;
+}
+
+.shop-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-raised);
+  border: 1px solid var(--line-gold);
+  padding: 1.25rem;
+  box-shadow: 4px 4px 0 rgba(212, 175, 55, 0.28);
+}
+
+.shop-card-media {
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0c0c0c;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.shop-card-media img {
+  max-height: 85%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.12));
+}
+
+.shop-card-title {
+  font-family: "Veneer", serif;
+  font-size: 1.35rem;
+  color: var(--gold-bright);
+  margin-bottom: 0.35rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.shop-card-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  opacity: 0.95;
+  margin-bottom: 0.75rem;
+}
+
+.shop-card-price {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--sienna);
+  margin-bottom: 1rem;
+}
+
+.shop-add-btn {
+  margin-top: auto;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--gold);
+  background: var(--gold);
+  color: #0a0a0a;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.shop-add-btn:hover {
+  background: transparent;
+  color: var(--gold-bright);
+}
+
+@media (max-width: 768px) {
+  .shop-main {
+    padding-left: 0;
+  }
+
+  .shop-inner {
+    padding-top: 1.5rem;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
   }
 }

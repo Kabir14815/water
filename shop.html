@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — aqvyn</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <header style="--border-width:100%;">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link" aria-label="aqvyn home">
+        <div class="logo">aqvyn</div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="#">Our water</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="hamburger" onclick="toggleMobileNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="#">Our water</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Contact</a>
+    </div>
+  </header>
+
+  <main class="shop-main">
+
+    <div class="shop-inner">
+      <section class="shop-hero">
+        <p class="small-title">store · subscribe · refill</p>
+        <h1 class="shop-title">Shop aqvyn</h1>
+        <p class="shop-lead">
+          Alpine spring water in the formats we bottle every day—still, sparkling,
+          and glass. Shipping is calculated at checkout (demo storefront).
+        </p>
+      </section>
+
+      <section class="shop-3d-section" aria-label="3D bottle preview">
+        <div class="shop-3d-header">
+          <h2 class="shop-3d-title">3D view</h2>
+          <p class="shop-3d-hint">
+            Same artwork as image.png · orthographic front (pixel-accurate) · scroll to zoom
+          </p>
+        </div>
+        <div
+          id="shop-bottle-viewer"
+          class="shop-3d-viewer"
+          role="img"
+          aria-label="Three-dimensional cross-plane display of the reference bottle image, orthographic front view">
+        </div>
+      </section>
+
+      <section class="shop-grid-section" aria-label="Products">
+        <ul class="shop-grid">
+          <li class="shop-card">
+            <div class="shop-card-media">
+              <img src="./image.png" alt="aqvyn still water 500ml" />
+            </div>
+            <h2 class="shop-card-title">Still · 500ml</h2>
+            <p class="shop-card-meta">12-pack · recyclable PET</p>
+            <p class="shop-card-price">$28.00</p>
+            <button type="button" class="shop-add-btn">Add to cart</button>
+          </li>
+          <li class="shop-card">
+            <div class="shop-card-media">
+              <img src="./image.png" alt="aqvyn sparkling water 500ml" />
+            </div>
+            <h2 class="shop-card-title">Sparkling · 500ml</h2>
+            <p class="shop-card-meta">8-pack · fine bubbles</p>
+            <p class="shop-card-price">$22.00</p>
+            <button type="button" class="shop-add-btn">Add to cart</button>
+          </li>
+          <li class="shop-card">
+            <div class="shop-card-media">
+              <img src="./image.png" alt="aqvyn glass bottle 750ml" />
+            </div>
+            <h2 class="shop-card-title">Glass · 750ml</h2>
+            <p class="shop-card-meta">6-pack · table format</p>
+            <p class="shop-card-price">$36.00</p>
+            <button type="button" class="shop-add-btn">Add to cart</button>
+          </li>
+          <li class="shop-card">
+            <div class="shop-card-media">
+              <img src="./first%20batch.png" alt="aqvyn limited label batch" />
+            </div>
+            <h2 class="shop-card-title">Limited label</h2>
+            <p class="shop-card-meta">Single bottle · collector run</p>
+            <p class="shop-card-price">$14.00</p>
+            <button type="button" class="shop-add-btn">Add to cart</button>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <aside class="social-sidebar" style="--border-height:100%;">
+      <nav>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5Zm.5 1.5h7.5a4.25 4.25 0 0 1 4.25 4.25v7.5a4.25 4.25 0 0 1-4.25 4.25h-7.5a4.25 4.25 0 0 1-4.25-4.25v-7.5a4.25 4.25 0 0 1 4.25-4.25Zm8.5 2.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm-5.25 1.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14Zm-3.75 7.25h-.08a2.11 2.11 0 0 0-1.92 1.18V10.5h-2.5v6.75h2.5v-3.43c0-.87.65-1.57 1.45-1.57s1.3.7 1.3 1.57v3.43H18.5v-3.87c0-1.88-1.16-2.81-2.25-2.81ZM7.5 10.5H10V17.25H7.5V10.5Zm1.25-3a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M21 5.92a8.18 8.18 0 0 1-2.36.65 4.12 4.12 0 0 0 1.8-2.27 8.21 8.21 0 0 1-2.6.99 4.1 4.1 0 0 0-7 3.73 11.65 11.65 0 0 1-8.46-4.3 4.1 4.1 0 0 0 1.27 5.48 4.07 4.07 0 0 1-1.86-.52v.05a4.1 4.1 0 0 0 3.29 4.02 4.07 4.07 0 0 1-1.85.07 4.1 4.1 0 0 0 3.83 2.85A8.24 8.24 0 0 1 2 19.53a11.62 11.62 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68v-.53a8.36 8.36 0 0 0 2.06-2.13Z" />
+          </svg>
+        </a>
+      </nav>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">aqvyn</div>
+      <div class="footer-links">
+        <a href="shop.html">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Stockists</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div class="footer-contact">
+        <a href="#">hello@aqvyn.com</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script type="module" src="shop-3d.js"></script>
+</body>
+
+</html>

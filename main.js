@@ -5,6 +5,10 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   window.toggleMobileNav = toggleMobileNav;
 
+  if (!document.querySelector(".hero")) {
+    return;
+  }
+
   const header = document.querySelector("header");
 
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
